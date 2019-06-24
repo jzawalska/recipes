@@ -1,0 +1,56 @@
+<html>
+<head>
+
+    {% load static %}
+
+    <title>Recipe search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="{% static 'account/Css/Custom-Account-Styles.css' %}" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+{#    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"#}
+{#            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"#}
+{#            crossorigin="anonymous"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"#}
+{#            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"#}
+{#            crossorigin="anonymous"></script>#}
+{#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"#}
+{#            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"#}
+{#            crossorigin="anonymous"></script>#}
+    <!-- Font Awesome Icons -->
+
+    {% block head_links %}
+
+    {% endblock %}
+
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1><a href="/">Recipe search</a></h1>
+    </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                {% block navbar %}{% endblock navbar %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href={% url 'sign_in' %}><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href={% url 'log_in' %}><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock content %}
+</div>
+</body>
+</html>

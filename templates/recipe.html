@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+    <li><a href={% url 'index' %}>Home Page</a></li>
+    <li><a href={% url 'search' %}>Search for recipes</a></li>
+    <li><a href={% url 'favorites' %}>Favorites</a></li>
+{% endblock navbar %}
+
+
+{% block content %}
+    <div>
+        <center><h2>{{ meal.strMeal }}</h2>
+            <h3>{{ meal.strCategory }}</h3>
+            <h3>{{ meal.strArea }}</h3></center>
+    </div>
+    <div>
+        <center><img src={{ meal.strMealThumb }}></center>
+    </div>
+    <div>
+        <h3>Ingredients</h3>
+        <table  class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Ingredient</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if meal.strIngredient1 %}
+                {% if meal.strIngredient1 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient1 }}</td>
+                        <td>{{ meal.strMeasure1 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient2 %}
+                {% if meal.strIngredient2 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient2 }}</td>
+                        <td>{{ meal.strMeasure2 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient3 %}
+                {% if meal.strIngredient3 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient4 }}</td>
+                        <td>{{ meal.strMeasure4 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient5 %}
+                {% if meal.strIngredient5 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient5 }}</td>
+                        <td>{{ meal.strMeasure5 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient7 %}
+                {% if meal.strIngredient7 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient7 }}</td>
+                        <td>{{ meal.strMeasure7 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %} {% if meal.strIngredient8 %}
+                {% if meal.strIngredient8 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient8 }}</td>
+                        <td>{{ meal.strMeasure8 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %} {% if meal.strIngredient9 %}
+                {% if meal.strIngredient9 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient9 }}</td>
+                        <td>{{ meal.strMeasure9 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %} {% if meal.strIngredient10 %}
+                {% if meal.strIngredient10 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient10 }}</td>
+                        <td>{{ meal.strMeasure10 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient11 %}
+                {% if meal.strIngredient11 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient11 }}</td>
+                        <td>{{ meal.strMeasure11 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient12 %}
+                {% if meal.strIngredient12 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient12 }}</td>
+                        <td>{{ meal.strMeasure12 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient1 %}
+                {% if meal.strIngredient13 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient13 }}</td>
+                        <td>{{ meal.strMeasure13 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient14 %}
+                {% if meal.strIngredient14 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient14 }}</td>
+                        <td>{{ meal.strMeasure14 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient15 %}
+                {% if meal.strIngredient15 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient15 }}</td>
+                        <td>{{ meal.strMeasure15 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient16 %}
+                {% if meal.strIngredient16 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient16 }}</td>
+                        <td>{{ meal.strMeasure16 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient17 %}
+                {% if meal.strIngredient17 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient17 }}</td>
+                        <td>{{ meal.strMeasure17 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient18 %}
+                {% if meal.strIngredient18 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient18 }}</td>
+                        <td>{{ meal.strMeasure18 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient19 %}
+                {% if meal.strIngredient19 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient19 }}</td>
+                        <td>{{ meal.strMeasure19 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            {% if meal.strIngredient20 %}
+                {% if meal.strIngredient20 != "" %}
+                    <tr>
+                        <td>{{ meal.strIngredient20 }}</td>
+                        <td>{{ meal.strMeasure20 }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+        </table>
+    </div>
+    <div>
+        <h3>Instructions</h3>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{ meal.strInstructions | linebreaksbr }}
+            </div>
+        </div>
+    </div>
+    {% if meal.strYoutube %}
+        <center>
+            <iframe width="425" height="349" src={{ yt_url }} frameborder="0" allowfullscreen></iframe>
+        </center>
+
+    {% endif %}
+    <div><h1> </h1></div>
+{% endblock content %}

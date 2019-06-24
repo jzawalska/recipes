@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+    <li><a href={% url 'index' %}>Home Page</a></li>
+    <li class="active"><a href={% url 'search' %}>Search for recipes</a></li>
+    <li><a href={% url 'favorites' %}>Favorites</a></li>
+{% endblock navbar %}
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            var max_fields = 20;
+            var wrapper = $(".container1");
+            var add_button = $(".add_form_field");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    $(wrapper).append('<div><input type="text" name=q/> <a href="#" class="delete btn btn-primary btn-xs">-</a></div>'); //add input box
+                } else {
+                    alert('You Reached the limits')
+                }
+            });
+
+            $(wrapper).on("click", ".delete", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <form action={% url 'search_results' %} method="get">
+        <div class="container1">
+            <div>
+                <input type="text" name="q">
+                <button type="button" class="add_form_field btn btn-primary btn-xs">+</button>
+                <input type="submit" value="Search">
+            </div>
+        </div>
+    </form>
+{% endblock content %}
+
+
